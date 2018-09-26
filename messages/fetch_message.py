@@ -1,4 +1,4 @@
-# *** Create a Message ***
+# *** Fetch a Message ***
 # Code based on https://www.twilio.com/docs/sms/api/message
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
@@ -18,18 +18,8 @@ auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # A list of message parameters & their permissable values, comment out (#) those lines not required
-message = client.messages.create(
-                        application_sid='APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', # Optional
-                        body='this is a message body', # Required if MediaUrl is not passed 
-                        from_='+15005550000', # Required if MessagingServiceSid is not passed
-                        max_price='0.0001', #Optional
-                        media_url='https://feywy.com/mbFQBRi4CG', # Required if Body is not passed
-                        messaging_service_sid='MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', #Required if From is not passed
-                        provide_feedback='true', #Optional, default = false
-                        status_callback='http://demo.twilio.com/docs/voice.xml', # Optional, default = completed
-                        to='+15005550001', # Required
-                        validity_period='14400' # Optional, in seconds, valid values = between 1 - 14400 (default) 
-                    )
+message = client.messages('MMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx').fetch()
+
 #print list of all message properties to console, useful for learning info available you can work with?
 print(message.account_sid)
 print(message.api_version)
