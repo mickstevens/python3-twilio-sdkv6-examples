@@ -1,4 +1,5 @@
 .DS_Store
+.vscode/
 calls/logs
 calls/not_for_git
 messages/logs
