@@ -18,7 +18,7 @@ auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # A list of conference parameters & their permissable values, comment out (#) those lines not required
-conference = client.conferences('CF974a79bdd3a50a3d8677cd3b0d1c6bde') \
+conference = client.conferences('CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') \
                   .update(announce_url='https://handler.twilio.com/twiml/EHee375cb86b94dc23803edd919f8a80f1'), #Optional, url may return MP3, WAV or TwiMl <Play> or <Say>
 
 #print list of all conference properties to console, useful for learning info available you can work with

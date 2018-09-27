@@ -18,7 +18,7 @@ auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # A list of conference parameters & their permissable values, comment out (#) those lines not required
-conference = client.conferences('CF974a79bdd3a50a3d8677cd3b0d1c6bde') \
+conference = client.conferences('CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') \
                    .update(announce_method='POST'), #Optional, GET or POST (default)
 
 #print list of all conference properties to console, useful for learning info available you can work with
