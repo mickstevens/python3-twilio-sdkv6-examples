@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='/usr/local/twilio/python3/sdkv6x/calls/logs/twilio_calls.log',
                     filemode='a')
 
-# Your Account Sid and Auth Token from twilio.com/console & stored in Mac OS ~/.~/ash_profile in this example 
+# Your Account Sid and Auth Token from twilio.com/console & stored in Mac OS ~/.bash_profile in this example 
 account_sid = os.environ.get('$TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
