@@ -2,9 +2,9 @@
 .vscode/
 calls/logs
 calls/not_for_git
-messages/logs
-messages/not_for_git
 conferences/logs
 conferences/not_for_git
-
-
+messages/logs
+messages/not_for_git
+recording/logs
+recording/not_for_git
