@@ -1,15 +1,15 @@
-# *** List Recordings between Dates ***
+# *** List Recordings by Call ***
 # Code based on https://www.twilio.com/docs/voice/api/recording
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
 import os
 from twilio.rest import Client
-from datetime import datetime
+# from datetime import datetime | not required for this example
 import logging
 #write requests & responses from Twilio to log file, useful, IMHO, for debugging:
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
-                    filename='/usr/local/twilio/python3/sdkv6x/recording/logs/twilio_recordings.log',
+                    filename='/usr/local/twilio/python3/sdkv6x/recordings/logs/twilio_recordings.log',
                     filemode='a')
 
 # Your Account Sid and Auth Token from twilio.com/console & stored in Mac OS ~/.bash_profile in this example 
@@ -18,11 +18,8 @@ auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # A list of recording parameters & their permissable values, comment out (#) those lines not required
-recordings = client.recordings .list(
-                                    date_created_before=datetime(2014, 7, 10, 0, 0),
-                                    date_created_after=datetime(2014, 6, 10, 0, 0)
-                                    )
-    
+recordings = client.recordings.list(call_sid='CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
 for record in recordings:
 
 #print list of all recording properties to console, useful for learning info available you can work with?
@@ -47,7 +44,7 @@ for record in recordings:
 #create variable for this record
 cdr = (record.sid)
 #open *.log file with cdr var as filename...
-f = open("/usr/local/twilio/python3/sdkv6x/recording/logs/" + str( cdr ) + ".log", "a")
+f = open("/usr/local/twilio/python3/sdkv6x/recordings/logs/" + str( cdr ) + ".log", "a")
 #write list of all message properties to above file...
 f.write("Account SID : " + str(record.account_sid) + "\n")
 f.write("API Version : " + str(record.api_version) + "\n")

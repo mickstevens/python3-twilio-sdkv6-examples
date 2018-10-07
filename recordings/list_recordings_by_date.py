@@ -9,7 +9,7 @@ import logging
 #write requests & responses from Twilio to log file, useful, IMHO, for debugging:
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
-                    filename='/usr/local/twilio/python3/sdkv6x/recording/logs/twilio_recordings.log',
+                    filename='/usr/local/twilio/python3/sdkv6x/recordings/logs/twilio_recordings.log',
                     filemode='a')
 
 # Your Account Sid and Auth Token from twilio.com/console & stored in Mac OS ~/.bash_profile in this example 
@@ -44,7 +44,7 @@ for record in recordings:
 #create variable for this record
 cdr = (record.sid)
 #open *.log file with cdr var as filename...
-f = open("/usr/local/twilio/python3/sdkv6x/recording/logs/" + str( cdr ) + ".log", "a")
+f = open("/usr/local/twilio/python3/sdkv6x/recordings/logs/" + str( cdr ) + ".log", "a")
 #write list of all message properties to above file...
 f.write("Account SID : " + str(record.account_sid) + "\n")
 f.write("API Version : " + str(record.api_version) + "\n")

@@ -1,4 +1,4 @@
-# *** List Recordings by Call ***
+# *** List all Recordings ***
 # Code based on https://www.twilio.com/docs/voice/api/recording
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
@@ -9,7 +9,7 @@ import logging
 #write requests & responses from Twilio to log file, useful, IMHO, for debugging:
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
-                    filename='/usr/local/twilio/python3/sdkv6x/recording/logs/twilio_recordings.log',
+                    filename='/usr/local/twilio/python3/sdkv6x/recordings/logs/twilio_recordings.log',
                     filemode='a')
 
 # Your Account Sid and Auth Token from twilio.com/console & stored in Mac OS ~/.bash_profile in this example 
@@ -18,7 +18,7 @@ auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # A list of recording parameters & their permissable values, comment out (#) those lines not required
-recordings = client.recordings.list(call_sid='CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+recordings = client.recordings.list()
 
 for record in recordings:
 
@@ -44,7 +44,7 @@ for record in recordings:
 #create variable for this record
 cdr = (record.sid)
 #open *.log file with cdr var as filename...
-f = open("/usr/local/twilio/python3/sdkv6x/recording/logs/" + str( cdr ) + ".log", "a")
+f = open("/usr/local/twilio/python3/sdkv6x/recordings/logs/" + str( cdr ) + ".log", "a")
 #write list of all message properties to above file...
 f.write("Account SID : " + str(record.account_sid) + "\n")
 f.write("API Version : " + str(record.api_version) + "\n")
