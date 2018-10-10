@@ -1,4 +1,4 @@
-# *** Create Account ***
+# *** Fetch Account ***
 # Code based on https://www.twilio.com/docs/iam/api/account
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
@@ -19,9 +19,7 @@ client = Client(account_sid, auth_token)
 
 # A list of account parameters & their permissable values
 
-account = client.api.accounts.create(
-                                    friendly_name='My New Account' #Optional, defaults to SubAccount Created at {YYYY-MM-DD HH:MM meridian}
-                                    )
+account = client.api.accounts('ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx').fetch()
 
 #print list of all account properties to console, useful for learning info available you can work with?
 print(account.auth_token)

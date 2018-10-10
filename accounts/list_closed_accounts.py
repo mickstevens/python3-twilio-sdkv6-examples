@@ -1,4 +1,4 @@
-# *** Create Account ***
+# *** List Accounts by status - closed ***
 # Code based on https://www.twilio.com/docs/iam/api/account
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
@@ -19,35 +19,35 @@ client = Client(account_sid, auth_token)
 
 # A list of account parameters & their permissable values
 
-account = client.api.accounts.create(
-                                    friendly_name='My New Account' #Optional, defaults to SubAccount Created at {YYYY-MM-DD HH:MM meridian}
-                                    )
+accounts = client.api.accounts.list(status='closed')
 
 #print list of all account properties to console, useful for learning info available you can work with?
-print(account.auth_token)
-print(account.date_created)
-print(account.date_updated)
-print(account.friendly_name)
-print(account.owner_account_sid)
-print(account.sid)
-print(account.status)
-print(account.subresource_uris)
-print(account.type)
-print(account.uri)
+for record in accounts:
+
+    print(record.auth_token)
+    print(record.date_created)
+    print(record.date_updated)
+    print(record.friendly_name)
+    print(record.owner_account_sid)
+    print(record.sid)
+    print(record.status)
+    print(record.subresource_uris)
+    print(record.type)
+    print(record.uri)
 
 #create variable for this account
-cdr = (account.sid)
+cdr = (record.sid)
 #open *.log file with cdr var as filename...
 f = open("/usr/local/twilio/python3/sdkv6x/accounts/logs/" + str( cdr ) + ".log", "a")
 #write list of all account properties to above file...
-f.write("Auth Token : " + str(account.auth_token) + "\n")
-f.write("Date Created : " + str(account.date_created) + "\n")
-f.write("Date Update : " + str(account.date_updated) + "\n")
-f.write("Friendly Name : " + str(account.friendly_name) + "\n")
-f.write("Owner Account SID : " + str(account.owner_account_sid) + "\n")
-f.write("SID : " + str(account.sid) + "\n")
-f.write("Status : " + str(account.status) + "\n")
-f.write("Subresource URIs : " + str(account.subresource_uris) + "\n")
-f.write("Type : " + str(account.type) + "\n")
-f.write("URI : " + str(account.uri) + "\n")
+f.write("Auth Token : " + str(record.auth_token) + "\n")
+f.write("Date Created : " + str(record.date_created) + "\n")
+f.write("Date Update : " + str(record.date_updated) + "\n")
+f.write("Friendly Name : " + str(record.friendly_name) + "\n")
+f.write("Owner record SID : " + str(record.owner_account_sid) + "\n")
+f.write("SID : " + str(record.sid) + "\n")
+f.write("Status : " + str(record.status) + "\n")
+f.write("Subresource URIs : " + str(record.subresource_uris) + "\n")
+f.write("Type : " + str(record.type) + "\n")
+f.write("URI : " + str(record.uri) + "\n")
 f.close()
