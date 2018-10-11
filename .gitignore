@@ -3,7 +3,8 @@
 api
 calls/logs
 calls/not_for_git
-chat
+chat/logs
+chat/not_for_git
 conferences/logs
 conferences/not_for_git
 fax
