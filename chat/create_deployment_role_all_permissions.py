@@ -24,7 +24,7 @@ role = client.chat.services('ISd2be945e1a6d417db86874d169e2d394') \
                   .create(
                        friendly_name='Deployment - Full Permissions',
                        type='deployment',
-                       permission=['addMember', 'createChannel', 'deleteAnyMessage', 'destroyChannel', 'editAnyMessage', 'editAnyMessageAttributes', 'editAnyUserInfo', 'editChannelName', 'editChannelAttributes', 'editOwnMessage', 'editOwnMessageAttributes', 'editOwnUserInfo', 'inviteMember', 'joinChannel', 'removeMember']
+                       permission=['addMember', 'createChannel', 'deleteAnyMessage', 'destroyChannel', 'editAnyMessage', 'editAnyMessageAttributes', 'editAnyUserInfo', 'editChannelAttributes', 'editChannelName', 'editOwnMessage', 'editOwnMessageAttributes', 'editOwnUserInfo', 'inviteMember', 'joinChannel', 'removeMember']
                    )
 
 #print list of all chat roles properties to console, useful for learning info available you can work with?

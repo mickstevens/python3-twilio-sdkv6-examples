@@ -1,4 +1,4 @@
-# *** Create a Deployement Role with all permissions for Chat ***
+# *** Create a Deployement Role with User only permissions for Chat ***
 # Code based on https://www.twilio.com/docs/chat/rest/roles
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
@@ -22,13 +22,13 @@ client = Client(account_sid, auth_token)
 role = client.chat.services('ISd2be945e1a6d417db86874d169e2d394') \
                   .roles \
                   .create(
-                       friendly_name='Deployment - Full Permissions',
+                       friendly_name='Deployment - User only Permissions',
                        type='deployment',
-                       permission=['addMember', 'createChannel', 'deleteAnyMessage', 'destroyChannel', 'editAnyMessage', 'editAnyMessageAttributes', 'editAnyUserInfo', 'editChannelName', 'editChannelAttributes', 'editOwnMessage', 'editOwnMessageAttributes', 'editOwnUserInfo', 'inviteMember', 'joinChannel', 'removeMember']
+                       permission=['editAnyUserInfo', 'editOwnUserInfo']
+
                    )
 
 #print list of all chat roles properties to console, useful for learning info available you can work with?
-
 
 print(role.account_sid)
 print(role.date_created)
