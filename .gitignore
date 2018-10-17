@@ -9,6 +9,8 @@ conferences/logs
 conferences/not_for_git
 fax
 ip_messaging
+keys/logs
+keys/not_for_git
 lookups
 messages/logs
 messages/not_for_git
