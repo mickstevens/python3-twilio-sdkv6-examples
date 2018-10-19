@@ -1,5 +1,5 @@
-# *** List Bindings for Chat ***
-# Code based on https://www.twilio.com/docs/chat/rest/bindings-resource
+# *** List Users for Chat ***
+# Code based on https://www.twilio.com/docs/chat/rest/users
 # Download Python 3 from https://www.python.org/downloads/
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
 import os
@@ -17,24 +17,23 @@ account_sid = os.environ.get('$TWILIO_ACCOUNT_SID')
 auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
-# A list of chat binding parameters & their permissable values
+# A list of chat users parameters & their permissable values
 
-bindings = client.chat.services('ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') \
-                      .bindings \
-                      .list()
+users = client.chat.services('ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx').users.list()
 
-#print list of all chat binding properties to console, useful for learning info available you can work with?
+#print list of all chat users properties to console, useful for learning info available you can work with?
 
-for record in bindings:
+for record in users:
     print(record.account_sid)
-    print(record.binding_type)
-    print(record.credential_sid)
+    print(record.attributes)
     print(record.date_created)
     print(record.date_updated)
-    print(record.endpoint)
-    print(record.identify)
-    print(record.links)
-    print(record.message_types)
+    print(record.friendly_name)
+    print(record.identity)
+    print(record.is_notifiable)
+    print(record.is_online)
+    print(record.joined_channels_count)
+    print(record.role_sid)
     print(record.service_sid)
     print(record.sid)
     print(record.url)
@@ -43,16 +42,17 @@ for record in bindings:
 cdr = (record.sid)
 #open *.log file with cdr var as filename...
 f = open("/usr/local/twilio/python/python3-twilio-sdkv6-examples/chat/logs/" + str( cdr ) + ".log", "a")
-#write list of all chat binding properties to above file...
+#write list of all chat users properties to above file...
 f.write("Account SID : " + str(record.account_sid) + "\n")
-f.write("Binding Type : " + str(record.binding_type) + "\n")
-f.write("Credential SID : " + str(record.credential_sid) + "\n")
+f.write("Attributes : " + str(record.attributes) + "\n")
 f.write("Date Created : " + str(record.date_created) + "\n")
 f.write("Date Updated : " + str(record.date_updated) + "\n")
-f.write("Endpoint : " + str(record.endpoint) + "\n")
+f.write("Friendly Name : " + str(record.friendly_name) + "\n")
 f.write("Identity : " + str(record.identity) + "\n")
-f.write("Links : " + str(record.links) + "\n")
-f.write("Message Types : " + str(record.message_types) + "\n")
+f.write("Is Notifiable : " + str(record.is_notifiable) + "\n")
+f.write("Is Online : " + str(record.is_online) + "\n")
+f.write("Joined Channels Count : " + str(record.joined_channels_count) + "\n")
+f.write("Role SID : " + str(record.role_sid) + "\n")
 f.write("Service SID : " + str(record.service_sid) + "\n")
 f.write("SID : " + str(record.sid) + "\n")
 f.write("URL : " + str(record.url) + "\n")

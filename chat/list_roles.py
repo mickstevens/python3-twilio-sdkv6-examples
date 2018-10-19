@@ -19,7 +19,7 @@ client = Client(account_sid, auth_token)
 
 # A list of chat roles parameters & their permissable values
 
-roles = client.chat.services('ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx').roles.list()
+roles = client.chat.services('ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx').roles.list()
 
 #print list of all chat roles properties to console, useful for learning info available you can work with?
 
