@@ -23,12 +23,12 @@ channel = client.chat.services('ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') \
                      .channels \
                      .create(
                          attributes="",
-                         created_by="mstevens",
-                         date_created=datetime(2018, 10, 18, 16, 33),
-                         date_updated=datetime(2018, 10, 18, 16, 33),
-                         friendly_name='MyChannel',
-                         type="public",
-                         unique_name="Channel_My"
+                         created_by="stevensm",
+                         date_created=datetime(2018, 10, 19, 13, 40),
+                         date_updated=datetime(2018, 10, 19, 13, 40),
+                         friendly_name='My_Private_Channel',
+                         type="private",
+                         unique_name="Channel_Private_My"
                          )
 
 

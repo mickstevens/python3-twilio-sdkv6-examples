@@ -19,7 +19,7 @@ client = Client(account_sid, auth_token)
 
 # A list of chat roles parameters & their permissable values
 
-role = client.chat.services('ISd2be945e1a6d417db86874d169e2d394') \
+role = client.chat.services('ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') \
                   .roles \
                   .create(
                        friendly_name='Deployment - Full Permissions',

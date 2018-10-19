@@ -5,6 +5,10 @@ calls/logs
 calls/not_for_git
 chat/logs
 chat/not_for_git
+chat/create_binding_type_apn.py
+chat/create_binding_type_gcm.py
+chat/fetch_binding.py
+chat/list_bindings.py
 conferences/logs
 conferences/not_for_git
 fax
