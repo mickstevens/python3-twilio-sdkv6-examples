@@ -11,7 +11,8 @@ chat/fetch_binding.py
 chat/list_bindings.py
 conferences/logs
 conferences/not_for_git
-fax
+fax/logs
+fax/not_for_git
 ip_messaging
 keys/logs
 keys/not_for_git
