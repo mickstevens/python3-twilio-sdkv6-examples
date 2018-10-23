@@ -19,7 +19,12 @@ client = Client(account_sid, auth_token)
 
 # A list of fax parameters & their permissable values, comment out (#) those lines not required
 
-faxes = client.fax.faxes.list()
+faxes = client.fax.faxes.list(
+                             date_created_after=datetime(2018, 10, 21, 0, 0), # Optional
+                             date_created_on_or_before=datetime(2018, 10, 23, 0, 0), # Optional
+                             from_='+15017122661', # Optional
+                             to='+15558675310' # Optional
+                             )
 
 #print list of all fax properties to console, useful for learning info available you can work with?
 

@@ -4,7 +4,7 @@
 # Download the Twilio helper library from https://www.twilio.com/docs/python/install
 import os
 from twilio.rest import Client
-# from datetime import datetime | not required for this example
+from datetime import datetime # not required for this example
 import logging
 #write requests & responses from Twilio to log file, useful for debugging:
 logging.basicConfig(level=logging.DEBUG,

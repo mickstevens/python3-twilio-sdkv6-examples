@@ -18,12 +18,17 @@ auth_token = os.environ.get('$TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # A list of fax parameters & their permissable values, comment out (#) those lines not required
-fax = client.fax.faxes \
-    .create(
-         from_='15017122661',
-         to='+15558675310',
-         media_url='https://www.twilio.com/docs/documents/25/justthefaxmaam.pdf'
-     )
+fax = client.fax.faxes.create(
+                             from_='+15017122661', # Optional?
+                             to='+15558675310', # Required, phone number or SIP address
+                             media_url='https://www.twilio.com/docs/documents/25/justthefaxmaam.pdf', # Required, HTTP(S) URL 
+                             quality='superfine', # Optional, or standard or fine (default)
+                             sip_auth_password='', # Optional
+                             sip_auth_username='', # Optional
+                             status_callback='', # Optional, URL that will receive a POST
+                             store_media='false', # Optional, or true (default) store media on Twilio servers  
+                             ttl='' # Optional, How many minutes from when a fax was initiated should Twilio attempt to send a fax
+                             )
 #print list of all fax properties to console, useful for learning info available you can work with?
 print(fax.account_sid)
 print(fax.api_version)
