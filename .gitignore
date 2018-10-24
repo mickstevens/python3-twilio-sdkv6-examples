@@ -16,7 +16,8 @@ fax/not_for_git
 ip_messaging
 keys/logs
 keys/not_for_git
-lookups
+lookup/logs
+lookup/not_for_git
 messages/logs
 messages/not_for_git
 monitor
