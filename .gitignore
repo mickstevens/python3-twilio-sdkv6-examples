@@ -22,7 +22,8 @@ messages/logs
 messages/not_for_git
 monitor/logs
 monitor/not_for_git
-notify
+notify/logs
+notify/not_for_git
 outgoing_caller_ids/logs
 outgoing_caller_ids/not_for_git
 preview
